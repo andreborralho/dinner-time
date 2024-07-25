@@ -1,0 +1,9 @@
+%a{ href: edit_ingredient_path(ingredient) }
+  .recipe{ id: dom_id(ingredient) }
+    %h3= ingredient.name
+
+    %div
+      %small
+        = 'Quantity'
+        = ':'
+      = "#{ingredient.quantity}"

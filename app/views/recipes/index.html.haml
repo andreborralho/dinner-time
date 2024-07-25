@@ -1,0 +1,11 @@
+%h1= 'Dinner Time Recipes'
+
+= link_to "Add your ingredients", ingredients_path
+
+#recipes
+  - @recipes.each do |recipe|
+    %a{ href: recipe_path(recipe) }
+      = render recipe
+
+= will_paginate @recipes
+
