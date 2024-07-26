@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
 	def create
 		@ingredient = Ingredient.new(ingredient_params)
 		@ingredient.save
-		find_recipes
+		map_with_recipes
 
 		redirect_to ingredients_path
 	end
@@ -23,7 +23,7 @@ class IngredientsController < ApplicationController
 	def update
 		@ingredient = Ingredient.find(params[:id])
 		@ingredient.update(ingredient_params)
-		find_recipes
+		map_with_recipes
 		redirect_to ingredients_path
 	end
 
@@ -38,7 +38,7 @@ class IngredientsController < ApplicationController
 		params.require(:ingredient).permit(:name, :quantity, :unit)
 	end
 
-	def find_recipes
+	def map_with_recipes
 		recipe_ingredients = RecipeIngredient.contains_ingredient(@ingredient.name)
 		recipe_ingredients.update_all(ingredient_id: @ingredient.id)
 	end
