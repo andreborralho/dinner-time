@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title DinnerTime
+    %title Dinner Time!
     %meta{ name: "viewport", content: "width=device-width,initial-scale=1" }
     = csrf_meta_tags
     = csp_meta_tag
@@ -10,4 +10,18 @@
     = javascript_importmap_tags
 
   %body
-    = yield
+    .container-fluid
+      %nav.navbar.navbar-expand-lg.bg-light
+        %div.container
+          %a.navbar-brand{ href: '/' }
+            %h3 Dinner Time!
+          %div.collapse.navbar-collapse#navbarTogglerDemo02
+            %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+              %li.nav-item
+                %a.nav-link{ href: recipes_path }
+                  Explore Recipes
+              %li.nav-item
+                %a.nav-link{ href: ingredients_path }
+                  Ingredients
+      .container
+        = yield

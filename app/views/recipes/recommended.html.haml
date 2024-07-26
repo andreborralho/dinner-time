@@ -1,10 +1,14 @@
-%h1= 'Dinner Time Recipes'
+%h1= 'Dinner Time!'
 
-= link_to "Add your ingredients", ingredients_path
+%div
+  %h4= 'Based on your ingredients these recipes are perfect for you!'
+
+  .text-end
+    = link_to "Add your ingredients", ingredients_path, class: 'btn btn-primary mb-3'
 
 #recipes
   - @recipes.each do |recipe|
     %a{ href: recipe_path(recipe) }
       = render recipe
 
-= will_paginate @recipes
+= will_paginate @recipes, inner_window: 1, outer_window: 1

@@ -1,11 +1,12 @@
-%h1= 'Dinner Time Recipes'
+%h1= 'All Recipes'
 
-= link_to "Add your ingredients", ingredients_path
+.text-end
+  = link_to "Add your ingredients", ingredients_path, class: 'btn btn-primary mb-3'
 
-#recipes
+#recipes.d-flex.flex-wrap
   - @recipes.each do |recipe|
     %a{ href: recipe_path(recipe) }
       = render recipe
 
-= will_paginate @recipes
+= will_paginate @recipes, inner_window: 3, outer_window: 1
 

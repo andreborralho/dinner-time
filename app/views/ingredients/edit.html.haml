@@ -1,3 +1,6 @@
-%h1= @ingredient.name
+%h1 Update #{@ingredient.name}
 
 = render 'form', ingredient: @ingredient
+
+%div
+  = link_to "Back to ingredients", :back

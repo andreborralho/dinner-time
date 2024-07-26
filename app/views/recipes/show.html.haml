@@ -1,8 +1,10 @@
-= render @recipe
+%img.recipe-main-image{ src: "#{decode_image_url(@recipe.image)}?w=600" }
+
+%h1.text-start= @recipe.title
 
 %ul
   - @recipe.recipe_ingredients.each do |ingredient|
     %li= ingredient.ingredient_description
 
 %div
-  = link_to "Back to recipes", recipes_path
+  = link_to "Back to recipes", :back

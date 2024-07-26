@@ -50,7 +50,6 @@ namespace :recipes do
 
 	def extract_data(ingredient)
 		# Match the ingredient part, which is everything after the first quantity unit
-		#ingredient.match(/(\d+\s*[\d\/¼½¾⅛⅓⅔]*)?\s*(tablespoons?|teaspoons?|pounds?|cloves?|ounces?|slices?|cups?|pinch|bags?|packages?|cans?|leaves?)?\s*([^,-]+)/i)
 		ingredient.match(/([\d\s\/\u00BC-\u00BE\u2150-\u215E]*)\b*(tablespoons?|teaspoons?|pounds?|cloves?|ounces?|slices?|cups?|pinch|bags?|packages?|cans?|leaves?)\b*([^,–]*)/)
 	end
 end

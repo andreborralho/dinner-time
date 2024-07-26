@@ -52,6 +52,8 @@ gem 'will_paginate', '~> 4.0'
 
 gem "font-awesome-sass"
 
+gem "bootstrap"
+gem "sassc-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -76,3 +78,5 @@ group :test do
 end
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "cssbundling-rails", "~> 1.4"
